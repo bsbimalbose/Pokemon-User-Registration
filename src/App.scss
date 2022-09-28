@@ -1,0 +1,98 @@
+.app-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  .user-registration-wrapper {
+    background-color: #fff;
+    width: 90%;
+    max-width: 1280px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.05);
+    .header {
+      font-size: 34px;
+      font-weight: 700;
+      padding: 50px 40px;
+      color: #292929;
+    }
+    .breadcrumbs-wrapper {
+      width: 100%;
+      border-top: 1px solid #eaebec;
+      display: flex;
+      .step {
+        padding: 15px 25px;
+        flex: 1 1;
+        border-right: 1px solid #eaebec;
+        border-bottom: 1px solid #eaebec;
+        text-align: center;
+        transition: transform 0.3s ease-out;
+        cursor: pointer;
+        text-decoration: none;
+        color: #292929;
+      }
+      :hover {
+        transform: translateY(-2px);
+        border-bottom: 1px solid #00d26a;
+      }
+      & .selected {
+        border-bottom: 3px solid #00d26a;
+      }
+      // & .disabled {
+
+      // }
+      // :hover {
+      //   transform: none;
+      //   border-bottom: 1px solid #eaebec;
+      // }
+    }
+  }
+
+  .footer-wrap {
+    padding: 30px 40px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .button {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 2px 1px 8px 0px rgb(0 0 0 / 5%);
+    margin-right: 20px;
+  }
+  & .grey {
+    background-color: #b3bac8;
+  }
+  & .outline {
+    background-color: #fff;
+    color: #292929;
+    border: 1px solid #4caf50;
+  }
+  .text-field {
+    margin: 25px;
+  }
+}
+
+.review-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pd-20 {
+  padding: 20px;
+}
+.pd-40 {
+  padding: 40px;
+}

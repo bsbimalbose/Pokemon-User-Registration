@@ -1,0 +1,106 @@
+.poke-card-wrap {
+  margin: 10px;
+  position: relative;
+
+  .heart-icon {
+    position: absolute;
+    font-size: 40px;
+    right: 0;
+    cursor: pointer;
+  }
+  & .favorite {
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    transform: scale(2);
+    animation-name: stretch;
+  }
+
+  @keyframes stretch {
+    0% {
+      transform: scale(1.2);
+      //   background-color: green;
+    }
+    50% {
+      transform: scale(1.4);
+    }
+    100% {
+      transform: scale(1.5);
+      //   background-color: red;
+    }
+  }
+
+  img {
+    background: #f2f2f2;
+    padding: 20px;
+  }
+  .id {
+    font-family: 'Flexo-Bold', arial, sans-serif;
+    color: #919191;
+    font-size: 80%;
+    padding-top: 2px;
+    font-weight: 500;
+    line-height: 125%;
+    margin: 0.5em 0;
+  }
+  .name {
+    font-family: 'Flexo-Demi', arial, sans-serif;
+    color: #313131;
+    font-size: 145%;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+  }
+  .types {
+    display: flex;
+    justify-content: space-around;
+    .type {
+      font-family: 'Flexo-Medium', arial, sans-serif;
+      border-radius: 3px;
+      line-height: 18px;
+      max-width: 110px;
+      margin: 0 1.5625% 0 0;
+      width: 38.4375%;
+      float: left;
+      text-transform: none;
+      font-size: 12px;
+      text-align: center;
+      text-transform: capitalize;
+    }
+  }
+
+  .rock {
+    background-color: rgb(148, 81, 81);
+  }
+  .ghost {
+    background-color: rgb(247, 247, 247);
+  }
+  .electric {
+    background-color: rgb(255, 255, 161);
+  }
+  .bug {
+    background-color: #f6d6a7;
+  }
+  .poison {
+    background-color: #e0a7f6;
+  }
+  .normal {
+    background-color: #f4f4f4;
+  }
+  .fairy {
+    background-color: rgba(255, 192, 203, 0.863);
+  }
+  .fire {
+    background-color: #fbe3df;
+  }
+  .grass {
+    background-color: #e2f9e1;
+  }
+  .water {
+    background-color: #e0f1fd;
+  }
+  .flying {
+    background-color: #ffffa1;
+  }
+}
