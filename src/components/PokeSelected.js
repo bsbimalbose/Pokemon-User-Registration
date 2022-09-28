@@ -8,7 +8,7 @@ export default function PokeSelected({ poke }) {
     <div className='poke-selected-wrap'>
       <div className='poke-image'>
         <img
-          alt='bulba'
+          alt={poke.name}
           width='400px'
           className={typeClass}
           src={`${poke.sprites.other.dream_world.front_default}`}
