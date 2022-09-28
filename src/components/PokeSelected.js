@@ -17,7 +17,7 @@ export default function PokeSelected({ poke }) {
       <div className='poke-details'>
         <div className='id'>
           #{poke.id}
-          <h4 className='name'> {poke.name}</h4>
+          <h4 className='name'>{poke.name}</h4>
         </div>
 
         <div className='body-dimensions'>
