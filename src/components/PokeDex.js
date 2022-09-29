@@ -9,7 +9,6 @@ import {
   flashNewPokeDataMap,
 } from '../redux/pokemon';
 import { fetchAllPokemonNames } from './../services/api';
-import Footer from './Footer';
 import Pagination from './Pagination';
 import PokemonCard from './PokemonCard';
 import PokeSelected from './PokeSelected';

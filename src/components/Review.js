@@ -74,7 +74,7 @@ export default function Review() {
       </div>
       {isPersonalInfoDone && favoritePoke.name ? (
         <div style={{ textAlign: 'right' }}>
-          <button type='button' class='button' onClick={submitDetails}>
+          <button type='button' className='button' onClick={submitDetails}>
             Submit
           </button>
         </div>

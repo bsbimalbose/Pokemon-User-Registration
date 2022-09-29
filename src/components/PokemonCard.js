@@ -25,7 +25,9 @@ export default function PokemonCard({ pokeName }) {
           types,
           id,
           sprite:
-            sprites?.other?.dream_world?.front_default || sprites.front_default,
+            sprites?.other?.dream_world?.front_default ||
+            sprites?.front_default ||
+            sprites?.other?.['official-artwork']?.front_default,
         },
       })
     );

@@ -7,12 +7,7 @@ export default function BreadCrumbs() {
   const userState = useSelector((state) => state.user);
 
   const getIcon = (type, currentPath, userState) => {
-    const {
-      isPersonalInfoDone,
-      isPersonalInfoSaved,
-      isFavPokeDone,
-      favoritePoke,
-    } = userState;
+    const { isPersonalInfoDone, isPersonalInfoSaved, favoritePoke } = userState;
     switch (type) {
       case 'personal': {
         if (isPersonalInfoDone) return '✅';
@@ -33,7 +28,6 @@ export default function BreadCrumbs() {
       }
     }
   };
-  const isFavPokeDone = userState.isFavPokeDone;
   return (
     <div className='breadcrumbs-wrapper'>
       <Link className={`step ${currentPath === '/' ? 'selected' : ''}`} to='/'>

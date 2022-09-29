@@ -58,7 +58,9 @@ export default function PokeSelected({ poke, showChangeSelection }) {
           <div className='types'>
             Type:
             {poke.types.map((type) => (
-              <span className={`type ${type.type.name}`}>{type.type.name}</span>
+              <span key={type.type.name} className={`type ${type.type.name}`}>
+                {type.type.name}
+              </span>
             ))}
           </div>
         </div>

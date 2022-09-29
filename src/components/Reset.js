@@ -8,7 +8,6 @@ export default function Reset() {
   return (
     <div className='user-registration-wrapper pd-40'>
       <h3>User details successfully submitted to a placeholder dummy api.</h3>
-
       <p>
         As part of testing, you can reset the app and try to submit new details
         again.

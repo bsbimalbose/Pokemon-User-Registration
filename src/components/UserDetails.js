@@ -1,8 +1,7 @@
 import { TextField } from '@mui/material';
-import { isValidDateValue } from '@testing-library/user-event/dist/utils';
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { updatePersonalInfo, setPersonalInfoDone } from '../redux/user';
 import { useForm } from 'react-hook-form';
 import Footer from './Footer';
@@ -71,7 +70,6 @@ export default function UserDetails() {
             className='text-field'
             label='Phone Number'
             variant='outlined'
-            t
             {...register('phoneNumber', {
               required: 'Phone number is required',
               pattern: {
