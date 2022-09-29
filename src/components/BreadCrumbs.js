@@ -22,7 +22,7 @@ export default function BreadCrumbs() {
       }
       case 'poke': {
         if (favoritePoke.name) return '✅';
-        if (currentPath === '/poke') return '🟢';
+        if (currentPath === '/pokedex') return '🟢';
         return '⚪';
       }
       case 'review': {
@@ -40,8 +40,8 @@ export default function BreadCrumbs() {
         {getIcon('personal', currentPath, userState)} Personal Details
       </Link>
       <Link
-        className={`step ${currentPath === '/poke' ? 'selected' : ''}`}
-        to='/poke'
+        className={`step ${currentPath === '/pokedex' ? 'selected' : ''}`}
+        to='/pokedex'
       >
         {getIcon('poke', currentPath, userState)} Poke Selection
       </Link>

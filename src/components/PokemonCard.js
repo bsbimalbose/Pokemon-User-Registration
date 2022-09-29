@@ -1,19 +1,51 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updatePokeDataMap } from '../redux/pokemon';
 import { updateFavoritePoke } from '../redux/user';
-import './PokeCard.scss';
+import { fetchPokemonInfo } from '../services/api';
+import './PokemonCard.scss';
 
-export default function PokemonCard({ poke }) {
-  const typeClass = poke.types?.[0]?.type?.name;
+export default function PokemonCard({ pokeName }) {
+  const pokeDataMap = useSelector((state) => state.pokemon.pokeDataMap);
+
+  const pokeObj = pokeDataMap[pokeName];
+  const typeClass = pokeObj?.types?.[0]?.type?.name;
   const dispatch = useDispatch();
 
+  async function fetchPokemonObject() {
+    const res = await fetchPokemonInfo(pokeName);
+    const { name, height, weight, types, id, sprites } = res.data;
+    dispatch(
+      updatePokeDataMap({
+        key: pokeName,
+        value: {
+          name,
+          height,
+          weight,
+          types,
+          id,
+          sprite:
+            sprites?.other?.dream_world?.front_default || sprites.front_default,
+        },
+      })
+    );
+  }
+
+  useEffect(() => {
+    if (!pokeObj) {
+      fetchPokemonObject();
+    }
+  }, []);
+
   const [isFavorite, setFavorite] = useState();
-  return (
+  return !pokeObj ? (
+    <div className='poke-card-wrap'>loading... </div>
+  ) : (
     <div className='poke-card-wrap'>
       <div
         onClick={() => {
           setFavorite(!isFavorite);
-          dispatch(updateFavoritePoke(poke));
+          dispatch(updateFavoritePoke(pokeObj));
         }}
         className={`heart-icon ${isFavorite ? 'favorite' : ''}`}
       >
@@ -24,13 +56,15 @@ export default function PokemonCard({ poke }) {
         width='150px'
         height='150px'
         className={typeClass}
-        src={`${poke.sprites.other.dream_world.front_default}`}
+        src={`${pokeObj.sprite}`}
       />
-      <div className='id'>#{poke.id}</div>
-      <div className='name'>{poke.name}</div>
+      <div className='id'>#{pokeObj.id}</div>
+      <div className='name'>{pokeObj.name}</div>
       <div className='types'>
-        {poke.types.map((type) => (
-          <span className={`type ${type.type.name}`}>{type.type.name}</span>
+        {pokeObj.types.map((type) => (
+          <span key={type.type.name} className={`type ${type.type.name}`}>
+            {type.type.name}
+          </span>
         ))}
       </div>
       <div></div>

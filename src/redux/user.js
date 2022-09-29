@@ -8,6 +8,7 @@ export const userSlice = createSlice({
     isPersonalInfoDone: false,
     isPersonalInfoSaved: false,
     isFavPokeDone: false,
+    formSubmitted: false,
   },
   reducers: {
     updatePersonalInfo: (state, action) => {
@@ -40,6 +41,17 @@ export const userSlice = createSlice({
       state.isFavPokeDone = action.payload.isFavPokeDone;
       state.isPersonalInfoSaved = action.payload.isPersonalInfoSaved;
     },
+    formSubmitted: (state) => {
+      state.formSubmitted = true;
+    },
+    flushUserDetails: (state) => {
+      state.personalInfo = {};
+      state.favoritePoke = {};
+      state.isPersonalInfoDone = false;
+      state.isPersonalInfoSaved = false;
+      state.isFavPokeDone = false;
+      state.formSubmitted = false;
+    },
   },
 });
 
@@ -50,6 +62,8 @@ export const {
   setPersonalInfoDone,
   setFavPokeDone,
   flashSavedUserState,
+  formSubmitted,
+  flushUserDetails,
 } = userSlice.actions;
 
 export default userSlice.reducer;

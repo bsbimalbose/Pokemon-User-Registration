@@ -1,6 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { formSubmitted } from '../redux/user';
 import { postUserDetails } from '../services/api';
 import PokeSelected from './PokeSelected';
 
@@ -8,6 +9,7 @@ export default function Review() {
   const isPersonalInfoDone = useSelector(
     (state) => state.user.isPersonalInfoDone
   );
+  const dispatch = useDispatch();
   const personalInfo = useSelector((state) => state.user.personalInfo);
   const favoritePoke = useSelector((state) => state.user.favoritePoke);
 
@@ -22,12 +24,15 @@ export default function Review() {
       favoritePokemon: favoritePoke.name,
     };
     postUserDetails(payload).then((res) => {
-      alert('details submitted');
+      dispatch(formSubmitted());
     });
   };
 
   return (
     <div className='pd-20'>
+      <h2 className='pd-20 text-center'>
+        Review Information before submission.
+      </h2>
       <div>
         <div className='review-head'>
           <h3>Personal Information</h3>
@@ -59,7 +64,7 @@ export default function Review() {
       <div>
         <div className='review-head'>
           <h3>Favorite Pokemon</h3>
-          <Link to='/poke'>Edit</Link>
+          <Link to='/pokedex'>Edit</Link>
         </div>
         {favoritePoke.name ? (
           <PokeSelected poke={favoritePoke} />
@@ -69,7 +74,7 @@ export default function Review() {
       </div>
       {isPersonalInfoDone && favoritePoke.name ? (
         <div style={{ textAlign: 'right' }}>
-          <button type='submit' class='button'>
+          <button type='button' class='button' onClick={submitDetails}>
             Submit
           </button>
         </div>
