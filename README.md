@@ -4,7 +4,7 @@ Live demo: https://myfavoritepokemon.netlify.app/
 
 **Makes use of the Array and HashMap datastructures to efficiently store retrieved pokemon api data.**
 
-Api data once fetched will store and wil not be fetched again even on page refresh unless we reset the app [feature made for testing purposes]
+Api data once fetched will be stored in Redux and localStorage and will not be fetched again even on page refresh unless we reset the app [feature made for testing purposes]
 
 
 
