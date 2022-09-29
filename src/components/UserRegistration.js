@@ -12,7 +12,7 @@ export default function UserRegistration() {
 
   return (
     <div className='user-registration-wrapper'>
-      <div className='header'>User Registration</div>
+      <div className='header'>Pokemon Master Registration</div>
       <BreadCrumbs />
       <Outlet />
     </div>

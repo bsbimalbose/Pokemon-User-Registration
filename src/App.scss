@@ -108,6 +108,10 @@
 .text-center {
   text-align: center;
 }
+.flex-center {
+  display: 'flex';
+  justify-content: 'center';
+}
 .flex-right {
   display: flex;
   justify-content: flex-end;
@@ -118,4 +122,7 @@
   cursor: pointer;
   margin: 0 12px;
   font-size: 20px;
+}
+.mt-15 {
+  margin-top: 15px;
 }

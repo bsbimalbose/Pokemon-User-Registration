@@ -78,16 +78,8 @@ export default function PokeDex() {
         </div>
       ) : (
         <>
-          {' '}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '15px',
-            }}
-          >
-            Pokedex
-          </div>
+          <h2 className='text-center mt-15'>Pokedex</h2>
+          <p className='text-center'>Choose your favorite Pokemon!!</p>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <TextField
               className='text-field'

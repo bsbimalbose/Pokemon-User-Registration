@@ -41,7 +41,7 @@ export default function UserDetails() {
 
   return (
     <div>
-      <div>Personal Information</div>
+      <h2 className='text-center mt-15'>Personal Information</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <TextField
