@@ -9,12 +9,8 @@ export default function PokeSelected({ poke, showChangeSelection }) {
   return (
     <div>
       <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '0 20px',
-          marginTop: showChangeSelection ? '20px' : 0,
-        }}
+        className='poke-selected-header'
+        style={{ marginTop: showChangeSelection ? '20px' : 0 }}
       >
         <h2>
           Your favorite Pokemon is{' '}
@@ -38,12 +34,7 @@ export default function PokeSelected({ poke, showChangeSelection }) {
 
       <div className='poke-selected-wrap'>
         <div className='poke-image'>
-          <img
-            alt={poke.name}
-            width='400px'
-            className={typeClass}
-            src={`${poke.sprite}`}
-          />
+          <img alt={poke.name} className={typeClass} src={`${poke.sprite}`} />
         </div>
         <div className='poke-details'>
           <div className='id'>

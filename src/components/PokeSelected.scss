@@ -2,17 +2,24 @@
   display: flex;
   padding: 20px;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .poke-image {
   img {
     padding: 28px;
     margin: 10px;
+    width: 400px;
     max-height: 400px;
+    @media (max-width: 768px) {
+      width: 200px;
+    }
   }
 }
 
 .poke-details {
-  width: 100%;
+  width: 90%;
   height: fit-content;
   padding: 20px;
   background: #30a7d7;
@@ -63,7 +70,14 @@
     }
   }
 }
-
+.poke-selected-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
 .rock {
   background-color: rgb(148, 81, 81);
 }
